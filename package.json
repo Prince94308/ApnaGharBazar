@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon api/index.js",
-    "start": "node api/index.js"
+    "start": "node api/index.js",
+    "build": "npm install && install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
@@ -27,8 +28,8 @@
     "mongoose": "^8.15.1",
     "multer": "^2.0.1",
     "nodemon": "^3.1.10",
+    "path": "^0.12.7",
     "persist": "^0.2.7",
-    "razorpay": "^2.9.6",
     "react-redux": "^9.2.0",
     "redux-persist": "^6.0.0"
   }
