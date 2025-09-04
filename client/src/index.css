@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+body{
+background-color:white;
+}
+
+@keyframes moveX {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-moveX {
+  display: inline-block;
+  white-space: nowrap;
+  animation: moveX 8s linear infinite;
+}
+
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(234, 179, 8, 0.5);
+}
+
