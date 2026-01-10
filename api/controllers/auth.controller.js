@@ -5,13 +5,18 @@ import { errorHandler } from '../utils/error.js'; // ✅ Don't forget this
 
 export const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
-  const hashedPassword = bcrypt.hashSync(password, 10);
-  const newUser = new User({ username, email, password: hashedPassword });
 
   try {
+    const hashedPassword = bcrypt.hashSync(password, 10);
+    const newUser = new User({ username, email, password: hashedPassword });
     await newUser.save();
     res.status(201).json('User created successfully!');
   } catch (error) {
+    // Duplicate key error
+    if (error.code === 11000) {
+      const field = Object.keys(error.keyValue)[0];
+      return next(errorHandler(409, `User with that ${field} already exists.`));
+    }
     next(error);
   }
 };

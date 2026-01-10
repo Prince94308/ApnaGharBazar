@@ -1,2 +1,78 @@
+# Environment variables
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+api/.env
+api/.env.local
+
+# Dependencies
 node_modules/
+client/node_modules/
+api/node_modules/
+
+# Build outputs
+dist/
+build/
+client/dist/
+client/build/
+*.log
+
+# Uploads and user-generated content
+uploads/
+api/uploads/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.pdf
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Package manager lock files (optional - uncomment if you don't want to commit them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# Cloudinary
+cloudinary_uploads/

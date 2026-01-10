@@ -10,6 +10,7 @@ import Header from './components/Header';
 import PrivateRoute from './components/PrivateRoute';
 import CreateListing from './pages/CreateListing';
 import Listing from './pages/Listing';
+import TestPayment from './pages/TestPayment';
 
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/search" element={<Search />} />
         <Route path="/listing/:id" element={<Listing />} />
+        <Route path="/test-payment" element={<TestPayment />} />
 
         {/* Private Routes */}
         <Route element={<PrivateRoute />}>

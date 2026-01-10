@@ -11,14 +11,12 @@ import fs from 'fs/promises';
 import path from 'path';
 
 // Load environment variables
-dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+dotenv.config({ path: path.join(__dirname, '.env') });
 
 // Init app
 const app = express();
-
-// Fix __dirname & __filename for ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 // Cloudinary config
 cloudinary.config({
@@ -61,11 +59,15 @@ const upload = multer({ storage });
 import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
 import listingRouter from './routes/listing.route.js';
+import paymentRouter from './routes/payment.route.js';
+import reviewRouter from './routes/review.route.js';
 
 // API routes
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/listing', listingRouter);
+app.use('/api/payment', paymentRouter);
+app.use('/api/review', reviewRouter);
 
 // Cloudinary upload route
 app.post('/upload', upload.array('images', 6), async (req, res) => {
