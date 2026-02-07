@@ -27,7 +27,7 @@ export default function ListingItem({ listing }) {
   const shadowColor = getShadowColor(listing._id);
 
   return (
-    <div className="relative w-full sm:w-[330px] group [perspective:1000px]">
+    <div className="relative w-full group [perspective:1000px]">
       <div
         className={`relative w-full h-full transition-transform duration-500 sm:group-hover:rotate-y-6 [transform-style:preserve-3d] bg-white rounded-xl overflow-hidden shadow-md sm:hover:shadow-xl ${shadowColor}`}
       >

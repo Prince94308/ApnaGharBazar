@@ -111,11 +111,11 @@ app.use((err, req, res, next) => {
 });
 
 // Serve frontend (after APIs)
-app.use(express.static(path.join(__dirname, 'client/dist')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 
 // Catch-all route for React Router (Express v5 safe)
 app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'));
 });
 
 // Connect to MongoDB and start server
